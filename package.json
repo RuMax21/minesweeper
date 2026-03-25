@@ -1,0 +1,28 @@
+{
+  "name": "minesweeper",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "start": "webpack serve",
+    "build:dev": "webpack --env mode=development"
+  },
+  "keywords": [],
+  "author": "RuMax21",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "@types/webpack": "^5.28.5",
+    "@types/webpack-dev-server": "^4.7.1",
+    "html-webpack-plugin": "^5.6.6",
+    "ts-loader": "^9.5.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.2",
+    "webpack": "^5.105.4",
+    "webpack-cli": "^7.0.2",
+    "webpack-dev-server": "^5.2.3"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1"
+  }
+}
