@@ -1,13 +1,21 @@
-import { Cell } from "../types";
+import { Cell } from '../types';
 
-export function createBoard(rows: number, cols: number, mines: number): Cell[][] {
-  const board: Cell[][] = Array(rows).fill(null).map(() => 
-    Array(cols).fill(null).map(() => ({
-      isMine: false,
-      state: 'closed',
-      nearbyMines: 0
-    }))
-  );
+export function createBoard(
+  rows: number,
+  cols: number,
+  mines: number,
+): Cell[][] {
+  const board: Cell[][] = Array(rows)
+    .fill(null)
+    .map(() =>
+      Array(cols)
+        .fill(null)
+        .map(() => ({
+          isMine: false,
+          state: 'closed',
+          nearbyMines: 0,
+        })),
+    );
 
   let minesPlaced = 0;
   while (minesPlaced < mines) {
@@ -30,7 +38,13 @@ export function createBoard(rows: number, cols: number, mines: number): Cell[][]
           const nearbyRow = row + deltaRow;
           const nearbyCol = col + deltaCol;
 
-          if (nearbyRow >= 0 && nearbyRow < rows && nearbyCol >= 0 && nearbyCol < cols && board[nearbyRow][nearbyCol].isMine) {
+          if (
+            nearbyRow >= 0 &&
+            nearbyRow < rows &&
+            nearbyCol >= 0 &&
+            nearbyCol < cols &&
+            board[nearbyRow][nearbyCol].isMine
+          ) {
             count++;
           }
         }

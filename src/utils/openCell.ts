@@ -1,4 +1,4 @@
-import { Cell } from "../types";
+import { Cell } from '../types';
 
 export function openCell(board: Cell[][], row: number, col: number): Cell[][] {
   const cell = board[row][col];
@@ -15,8 +15,16 @@ export function openCell(board: Cell[][], row: number, col: number): Cell[][] {
         const nearbyRow = row + deltaRow;
         const nearbyCol = col + deltaCol;
 
-        if (nearbyRow >= 0 && nearbyRow < board.length && nearbyCol >= 0 && nearbyCol < board[0].length) {
-          if (board[nearbyRow][nearbyCol].state === 'closed' && !board[nearbyRow][nearbyCol].isMine) {
+        if (
+          nearbyRow >= 0 &&
+          nearbyRow < board.length &&
+          nearbyCol >= 0 &&
+          nearbyCol < board[0].length
+        ) {
+          if (
+            board[nearbyRow][nearbyCol].state === 'closed' &&
+            !board[nearbyRow][nearbyCol].isMine
+          ) {
             openCell(board, nearbyRow, nearbyCol);
           }
         }
