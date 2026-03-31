@@ -51,7 +51,7 @@ export default (env: EnvVariables) => {
       port: env.port ?? 5000,
       open: true,
     },
-    devtool: 'source-map'
+    devtool: 'source-map',
   };
 
   return config;

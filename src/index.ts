@@ -1,10 +1,7 @@
 import { GameStatus } from './types';
 import { createBoard, openCell, renderBoard } from './utils';
+import { ROWS, COLS, MINES } from './constants';
 import './styles.scss';
-
-const ROWS = 9;
-const COLS = 9;
-const MINES = 10;
 
 let board = createBoard(ROWS, COLS, MINES);
 let gameStatus: GameStatus = 'playing';

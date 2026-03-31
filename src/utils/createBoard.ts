@@ -5,17 +5,16 @@ export function createBoard(
   cols: number,
   mines: number,
 ): Cell[][] {
-  const board: Cell[][] = Array(rows)
-    .fill(null)
-    .map(() =>
-      Array(cols)
-        .fill(null)
-        .map(() => ({
-          isMine: false,
-          state: 'closed',
-          nearbyMines: 0,
-        })),
-    );
+  const board: Cell[][] = Array.from({ length: rows }, () =>
+    Array.from(
+      { length: cols },
+      (): Cell => ({
+        isMine: false,
+        state: 'closed',
+        nearbyMines: 0,
+      }),
+    ),
+  );
 
   let minesPlaced = 0;
   while (minesPlaced < mines) {

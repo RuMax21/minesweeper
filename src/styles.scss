@@ -41,7 +41,7 @@ h1 {
   color: #333;
 }
 
-#start-button {
+.start-button {
   padding: 5px 15px;
   font-size: 16px;
   background: #4caf50;
@@ -55,7 +55,7 @@ h1 {
   }
 }
 
-#board {
+.board {
   display: grid;
   gap: 2px;
   background: #999;
